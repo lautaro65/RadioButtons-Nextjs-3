@@ -31,16 +31,16 @@ const CompactPricingSelector: React.FC = () => {
   const [selectedOption, setSelectedOption] = useState<string>('monthly')
 
   return (
-    <div className="w-[500px] h-[500px] bg-white rounded-xl shadow-lg overflow-hidden flex flex-col">
+    <div className="w-[400px] h-[320px] bg-white rounded-xl shadow-lg overflow-hidden flex flex-col">
       <div className="bg-gradient-to-r from-blue-500 to-purple-600 p-6 text-white">
-        <h2 className="text-2xl font-bold mb-2">Choose Your Plan</h2>
+        <h2 className="text-2xl font-bold mb-1">Choose Your Plan</h2>
         <p className="text-sm opacity-80">Select the best option for you</p>
       </div>
-      <div className="flex-grow p-6 space-y-4">
+      <div className="flex-grow p-2 space-y-1">
         {pricingOptions.map((option) => (
           <motion.div
             key={option.id}
-            className={`relative border-2 rounded-lg p-4 cursor-pointer transition-all duration-300 ${
+            className={`relative border-2 rounded-lg p-2 cursor-pointer transition-all duration-300 ${
               selectedOption === option.id
                 ? 'border-blue-500 bg-blue-50'
                 : 'border-gray-200 hover:border-blue-300'
@@ -61,7 +61,7 @@ const CompactPricingSelector: React.FC = () => {
             <label htmlFor={option.id} className="flex justify-between items-center">
               <div className="flex items-center">
                 <motion.div
-                  className={`w-5 h-5 rounded-full border-2 mr-3 flex items-center justify-center ${
+                  className={`w-3 h-3 rounded-full border-2 mr-3 flex items-center justify-center ${
                     selectedOption === option.id ? 'border-blue-500 bg-blue-500' : 'border-gray-300'
                   }`}
                   animate={{
@@ -93,9 +93,9 @@ const CompactPricingSelector: React.FC = () => {
           </motion.div>
         ))}
       </div>
-      <div className="p-6 bg-gray-50">
+      <div className="p-3 bg-gray-50">
         <motion.button
-          className="w-full bg-blue-600 text-white py-3 px-6 rounded-lg font-semibold text-lg hover:bg-blue-700 transition-colors duration-300"
+          className="w-full h-10 bg-blue-600 text-white py-1 px-6 rounded-lg font-semibold text-lg hover:bg-blue-700 transition-colors duration-300"
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
         >
